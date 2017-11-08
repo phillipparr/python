@@ -73,3 +73,17 @@ def longest_common_string(st1,st2):
 string1 = 'BBEBDEAEBADAAEDCDDBCBACBBCBDDBABBDEECDBAECACEECC'
 string2 = 'CCBADACDCCADDBDABDEDCDDBCBACBBCBDDBABBDEECCACCBDCEBABBBEDC'
 longest_common_string(string1,string2)
+
+# Question 3
+
+# Read file function
+def get_words(file_name):
+    open_file=open(file_name,'r')
+    text_file=open_file.read()
+    text_file=text_file.strip().split(' ')
+    text_file=[i.replace('.','') for i in text_file]
+    text_file=[i.replace(',','') for i in text_file]
+    text_file = [i.strip() for i in text_file]
+    print(text_file)
+    return text_file
+get_words('sense_and_sensitivity.txt')
