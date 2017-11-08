@@ -89,7 +89,8 @@ def get_words(file_name):
     return text_file
 
 # Sample output of the read function using the given test file
-words = get_words('desktop/sense_and_sensitivity.txt')
+all_words = get_words('desktop/sense_and_sensitivity.txt')
+print("there are ",len(all_words),"words")
 
 # Function that returns a dictionary of words that end in ly for keys
 # and the number of times each word appears as for values
@@ -107,9 +108,10 @@ def get_dic(words):
     return ly_dic
 
 # Sample output of the get_dic function using the output of the get_words function
-get_dic(words)
+ly_words = get_dic(all_words)
+print("there are ",len(ly_words),"ly words")
 
-def top_words(dic):
+def get_top_ly_words(dic):
     most_common = []
     while len(most_common) < 10:
         max_word=max(dic, key=dic.get)
@@ -120,5 +122,7 @@ def top_words(dic):
         most_common.append(top_word)
         del dic[max_word]
     return most_common
-common_words=top_words(words)
+
+# Sample output of get_top_ly_words function
+common_words=get_top_ly_words(ly_words)
 print(common_words)
