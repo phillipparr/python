@@ -120,5 +120,5 @@ def top_words(dic):
         most_common.append(top_word)
         del dic[max_word]
     return most_common
-biggest=top_words(words)
-print(biggest)
+common_words=top_words(words)
+print(common_words)
