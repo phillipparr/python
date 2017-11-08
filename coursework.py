@@ -82,7 +82,7 @@ def get_words(file_name):
     text_file=open_file.read()
     text_file=text_file.replace('--',' ')
     text_file=text_file.lower().split()
-    characters="!.,;'-)("
+    characters=['"','!',',',';','\'','-',')','(',':','/','%','&','?','.']
     for i in characters:
         text_file=[j.rstrip(i) for j in text_file]
         text_file=[k.lstrip(i) for k in text_file]
