@@ -1,7 +1,7 @@
 #Question one
 # This reads a file and returns a list of integers
-def read_file(file):
-    open_file=open(file,'r')
+def readnumbers(file_name):
+    open_file=open(file_name,'r')
     text_file=open_file.read()
     text_file=text_file.strip().split(',')
     text_file = [i.strip() for i in text_file]
@@ -32,7 +32,7 @@ def print_numbers(numbers):
 
 # This is an example of using the file you just read and passing it through
 # the functions above, using the given test file
-numbers = read_file('numbers.txt')
+numbers = readnumbers('numbers.txt')
 print_numbers(numbers)
 
 
@@ -40,8 +40,8 @@ print_numbers(numbers)
 #Question two
 
 # This reads a file and returns a tuple
-def read_file(file):
-    open_file=open(file,'r')
+def readsequence(file_name):
+    open_file=open(file_name,'r')
     text_file=open_file.read()
     text_file=text_file.strip().split('\n')
     text_file=tuple(text_file)
@@ -52,14 +52,14 @@ def read_file(file):
 read_file('sequences.txt')
 
 # This is a function that outputs the longest common string from two strings
-def common_string(a,b):
+def longest_common_string(st1,st2):
     common_string=[]
-    for i in range(len(a)):
-        if a[i] in b:
-            common_string.append(a[i])
-            for j in range(i+1,len(a)):
-                if a[i:j] in b:
-                    common_string.append(a[i:j])
+    for i in range(len(st1)):
+        if st1[i] in st2:
+            common_string.append(st1[i])
+            for j in range(i+1,len(st1)):
+                if st1[i:j] in st2:
+                    common_string.append(st1[i:j])
                 else:
                     continue
         else:
@@ -72,4 +72,4 @@ def common_string(a,b):
 # This gives example output from the common_string function
 string1 = 'BBEBDEAEBADAAEDCDDBCBACBBCBDDBABBDEECDBAECACEECC'
 string2 = 'CCBADACDCCADDBDABDEDCDDBCBACBBCBDDBABBDEECCACCBDCEBABBBEDC'
-common_string(string1,string2)
+longest_common_string(string1,string2)
