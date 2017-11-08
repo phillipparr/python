@@ -49,7 +49,7 @@ def readsequence(file_name):
     return text_file
 
 # This gives example output from the read_file function
-read_file('sequences.txt')
+readsequence('sequences.txt')
 
 # This is a function that outputs the longest common string from two strings
 def longest_common_string(st1,st2):
