@@ -80,10 +80,13 @@ longest_common_string(string1,string2)
 def get_words(file_name):
     open_file=open(file_name,'r')
     text_file=open_file.read()
-    text_file=text_file.strip().split(' ')
-    text_file=[i.replace('.','') for i in text_file]
-    text_file=[i.replace(',','') for i in text_file]
-    text_file = [i.strip() for i in text_file]
+    text_file=text_file.replace(';','')
+    text_file=text_file.replace(',','')
+    text_file=text_file.replace('.','')
+    text_file=text_file.replace('?','')
+    text_file=text_file.replace('!','')
+    text_file=text_file.replace(':','')
+    text_file=text_file.lower().split()
     print(text_file)
     return text_file
-get_words('sense_and_sensitivity.txt')
+get_words('desktop/sense_and_sensitivity.txt')
