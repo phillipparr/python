@@ -87,9 +87,12 @@ def get_words(file_name):
         text_file=[j.rstrip(i) for j in text_file]
         text_file=[k.lstrip(i) for k in text_file]
     return text_file
+
+# Sample output of the read function using the given test file
 words = get_words('desktop/sense_and_sensitivity.txt')
 
-
+# Function that returns a dictionary of words that end in ly for keys
+# and the number of times each word appears as for values
 def get_dic(words):
     new_words=[]
     ly_dic={}
@@ -102,4 +105,20 @@ def get_dic(words):
         else:
             ly_dic[item]=1
     return ly_dic
+
+# Sample output of the get_dic function using the output of the get_words function
 get_dic(words)
+
+def top_words(dic):
+    most_common = []
+    while len(most_common) < 10:
+        max_word=max(dic, key=dic.get)
+        top_word=[]
+        top_word.append(max_word)
+        top_word.append(dic[max_word])
+        top_word=tuple(top_word)
+        most_common.append(top_word)
+        del dic[max_word]
+    return most_common
+biggest=top_words(words)
+print(biggest)
