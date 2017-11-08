@@ -11,11 +11,16 @@ def read_file(file):
 
 # This checks if a single integer is prime
 def isPrime(number):
+    if number == 2:
+        return False
     for i in range(2,number-1):
         if number % i == 0:
             return False
-        else:
-            return True
+    else:
+        return True
+
+# Test a single number
+print(isPrime(2))
 
 # This allows you to use the isPrime function on a list and prints the results
 def print_numbers(numbers):
