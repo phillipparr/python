@@ -1,16 +1,33 @@
 #Question one
-numbers = [1046527, 1041147, 8356237, 9753423, 9865433, 99733411, 8217,
-897933, 67868712, 7676317]
-def isPrime(alist):
-    print('Number: {}'.format(alist))
-    for num in alist:
-        for i in range(2,num-1):
-            if num % i == 0:
-                print ('{}: Not Prime'.format(num))
-                break
+# This reads a file and returns a list of integers
+def read_file(file):
+    open_file=open(file,'r')
+    text_file=open_file.read()
+    text_file=text_file.strip().split(',')
+    text_file = [i.strip() for i in text_file]
+    text_file = [int(i) for i in text_file]
+    print("Numbers: ",text_file)
+    return text_file
+
+# This checks if a single integer is prime
+def isPrime(number):
+    for i in range(2,number-1):
+        if number % i == 0:
+            return False
         else:
+            return True
+
+# This allows you to use the isPrime function on a list and prints the results
+def print_numbers(numbers):
+    for num in numbers:
+        if isPrime(num):
             print('{}: Prime'.format(num))
-isPrime(numbers)
+        else:
+            print('{}: Not Prime'.format(num))
+
+# This is an example of using the file you just read and passing it through the functions above
+numbers = read_file('numbers.txt')
+print_numbers(numbers)
 
 #Question two
 string1 = 'BBEBDEAEBADAAEDCDDBCBACBBCBDDBABBDEECDBAECACEECC'
