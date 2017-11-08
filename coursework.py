@@ -35,9 +35,23 @@ def print_numbers(numbers):
 numbers = read_file('numbers.txt')
 print_numbers(numbers)
 
+
+
 #Question two
-string1 = 'BBEBDEAEBADAAEDCDDBCBACBBCBDDBABBDEECDBAECACEECC'
-string2 = 'CCBADACDCCADDBDABDEDCDDBCBACBBCBDDBABBDEECCACCBDCEBABBBEDC'
+
+# This reads a file and returns a tuple
+def read_file(file):
+    open_file=open(file,'r')
+    text_file=open_file.read()
+    text_file=text_file.strip().split('\n')
+    text_file=tuple(text_file)
+    print(text_file)
+    return text_file
+
+# This gives example output from the read_file function
+read_file('sequences.txt')
+
+# This is a function that outputs the longest common string from two strings
 def common_string(a,b):
     common_string=[]
     for i in range(len(a)):
@@ -50,5 +64,12 @@ def common_string(a,b):
                     continue
         else:
             continue
-    print(max(common_string, key = len))
+    longest = max(common_string, key = len)
+    length=len(longest)
+    print('The longest common substring is', longest, 'of size ', length)
+    return longest
+
+# This gives example output from the common_string function
+string1 = 'BBEBDEAEBADAAEDCDDBCBACBBCBDDBABBDEECDBAECACEECC'
+string2 = 'CCBADACDCCADDBDABDEDCDDBCBACBBCBDDBABBDEECCACCBDCEBABBBEDC'
 common_string(string1,string2)
