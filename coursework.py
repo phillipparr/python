@@ -25,7 +25,8 @@ def print_numbers(numbers):
         else:
             print('{}: Not Prime'.format(num))
 
-# This is an example of using the file you just read and passing it through the functions above
+# This is an example of using the file you just read and passing it through
+# the functions above, using the given test file
 numbers = read_file('numbers.txt')
 print_numbers(numbers)
 
