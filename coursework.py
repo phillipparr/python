@@ -125,4 +125,6 @@ def get_top_ly_words(dic):
 
 # Sample output of get_top_ly_words function
 common_words=get_top_ly_words(ly_words)
-print(common_words)
+print('The top ten ly words are:')
+for i in common_words:
+    print(i[0],i[1])
