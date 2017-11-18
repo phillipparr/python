@@ -6,7 +6,7 @@ def readnumbers(file_name):
     text_file=text_file.strip().split(',')
     text_file = [i.strip() for i in text_file]
     text_file = [int(i) for i in text_file]
-    print("Numbers: ",text_file)
+    print("Numbers:",text_file)
     return text_file
 
 # This checks if a single integer is prime
