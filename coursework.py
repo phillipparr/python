@@ -12,7 +12,7 @@ def readnumbers(file_name):
 # This checks if a single integer is prime
 def isPrime(number):
     if number == 2:
-        return False
+        return True
     for i in range(2,number):
         if number % i == 0:
             return False
