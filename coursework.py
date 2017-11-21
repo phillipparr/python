@@ -56,14 +56,9 @@ def longest_common_string(st1,st2):
     common_string=[]
     for i in range(len(st1)):
         if st1[i] in st2:
-            common_string.append(st1[i])
             for j in range(i+1,len(st1)):
-                if st1[i:j] in st2:
+                if st1[i:j] in st2 and len(st1[i:j]) >= 2:
                     common_string.append(st1[i:j])
-                else:
-                    continue
-        else:
-            continue
     longest = max(common_string, key = len)
     length=len(longest)
     print('The longest common substring is', longest, 'of size ', length)
