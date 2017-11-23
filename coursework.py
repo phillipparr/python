@@ -6,7 +6,7 @@ def readnumbers(file_name):
     text_file=text_file.strip().split(',')
     text_file = [i.strip() for i in text_file]
     text_file = [int(i) for i in text_file]
-    print("Numbers:",text_file)
+    # print("Numbers:",text_file)
     return text_file
 
 # This checks if a single integer is prime
@@ -45,7 +45,7 @@ def readsequence(file_name):
     text_file=open_file.read()
     text_file=text_file.strip().split('\n')
     text_file=tuple(text_file)
-    print(text_file)
+    # print(text_file)
     return text_file
 
 # This gives example output from the read_file function
@@ -61,7 +61,7 @@ def longest_common_string(st1,st2):
                     common_string.append(st1[i:j])
     longest = max(common_string, key = len)
     length=len(longest)
-    print('The longest common substring is', longest, 'of size ', length)
+    # print('The longest common substring is', longest, 'of size ', length)
     return longest
 
 # This gives example output from the common_string function
